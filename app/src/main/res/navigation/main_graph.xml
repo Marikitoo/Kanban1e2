@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mariquito.atividade5.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.mariquito.atividade5.auth.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recoverAccountFragment"
+            app:destination="@id/recoverAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverAccountFragment"
+        android:name="com.mariquito.atividade5.ui.auth.RecoverAccountFragment"
+        android:label="fragment_recover_account"
+        tools:layout="@layout/fragment_recover_account" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.mariquito.atividade5.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+</navigation>
