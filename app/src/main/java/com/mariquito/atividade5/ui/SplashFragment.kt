@@ -10,6 +10,7 @@ import androidx.core.os.postDelayed
 import androidx.navigation.fragment.findNavController
 import com.mariquito.atividade5.R
 import com.mariquito.atividade5.databinding.FragmentSplashBinding
+import kotlinx.coroutines.handleCoroutineException
 import java.util.logging.Handler
 
 class SplashFragment : Fragment() {
@@ -28,6 +29,7 @@ class SplashFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        android.os.Handler(Looper.getMainLooper()).postDelayed({checkAuth()} , 3000)
 
     }
 

@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.mariquito.atividade5.R
-import com.mariquito.atividade5.databinding.FragmentSplashBinding
+import com.mariquito.atividade5.databinding.FragmentLoginBinding
+
 
 class LoginFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +20,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSplashBinding.inflate(inflater , container , false)
+        _binding = FragmentLoginBinding.inflate(inflater , container , false)
         return binding.root
     }
 
@@ -29,6 +31,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun initListener() {
+
+        binding.btnLogin.setOnClickListener{
+            findNavController().navigate(R.id.homeFragment)
+        }
 
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
