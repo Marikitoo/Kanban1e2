@@ -9,4 +9,9 @@
     </style>
 
     <style name="Theme.Atividade5" parent="Base.Theme.Atividade5" />
+
+    <style name="CustonTabLayout" parent="Theme.Material3.DayNight.NoActionBar">
+            <item name="android:textSize">14sp</item>
+            <iten name="android:textStyle">bold</iten>
+    </style>
 </resources>
