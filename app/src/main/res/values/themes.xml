@@ -14,4 +14,9 @@
             <item name="android:textSize">14sp</item>
             <iten name="android:textStyle">bold</iten>
     </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/green</item>
+    </style>
 </resources>

@@ -48,5 +48,13 @@
         android:id="@+id/homeFragment"
         android:name="com.mariquito.atividade5.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_formTaskFragment"
+            app:destination="@id/formTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formTaskFragment"
+        android:name="com.mariquito.atividade5.ui.FormTaskFragment"
+        android:label="FormTaskFragment" />
 </navigation>

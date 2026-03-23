@@ -11,14 +11,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Descrição"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,9 +29,89 @@
             android:layout_height="48dp"
             android:background="@drawable/bg_edit_text"
             android:hint="Informe sua nova Tarefa"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textview" />
+            app:layout_constraintTop_toBottomOf="@+id/textview" />
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Status"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editTextDescricao"
+            />
+        
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewStatus">
+
+            <RadioButton
+                android:layout_width="88dp"
+                android:layout_height="44dp"
+                android:id="@+id/rbTodo"
+                android:text="A Fazer"
+                android:checked="true"
+                android:textColor="@color/white"
+                android:theme="@style/MyRadioButton"
+                />
+            <RadioButton
+                android:layout_width="88dp"
+                android:layout_height="44dp"
+                android:buttonTint="@color/black"
+                android:id="@+id/rbDoing"
+                android:text="Fazendo"
+                android:theme="@style/MyRadioButton"
+                android:textColor="@color/white"
+                />
+            <RadioButton
+                android:layout_width="88dp"
+                android:layout_height="44dp"
+                android:buttonTint="@color/black"
+                android:id="@+id/rbDone"
+                android:text="Feita"
+                android:textColor="@color/white"
+                android:theme="@style/MyRadioButton" />
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_btn"
+            android:text="Salvar"
+            android:textAllCaps="false"
+            android:textColor="@color/color_default"
+            app:backgroundTint="@null"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="221dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/white"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="152dp"
+            tools:layout_editor_absoluteY="278dp"
+            tools:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonSave" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
