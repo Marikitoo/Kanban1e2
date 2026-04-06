@@ -1,4 +1,4 @@
-package com.mariquito.atividade5.auth
+package com.mariquito.atividade5.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.mariquito.atividade5.R
 import com.mariquito.atividade5.databinding.FragmentLoginBinding
+
+
 
 
 class LoginFragment : Fragment() {

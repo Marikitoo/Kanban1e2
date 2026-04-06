@@ -9,7 +9,29 @@
     android:padding="20dp"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_back"
+            android:paddingTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recuperar Conta"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
@@ -55,8 +77,8 @@
             app:layout_constraintTop_toBottomOf="@id/textViewStatus">
 
             <RadioButton
-                android:layout_width="88dp"
-                android:layout_height="44dp"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
                 android:id="@+id/rbTodo"
                 android:text="A Fazer"
                 android:checked="true"
@@ -64,8 +86,8 @@
                 android:theme="@style/MyRadioButton"
                 />
             <RadioButton
-                android:layout_width="88dp"
-                android:layout_height="44dp"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
                 android:buttonTint="@color/black"
                 android:id="@+id/rbDoing"
                 android:text="Fazendo"
@@ -73,8 +95,8 @@
                 android:textColor="@color/white"
                 />
             <RadioButton
-                android:layout_width="88dp"
-                android:layout_height="44dp"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
                 android:buttonTint="@color/black"
                 android:id="@+id/rbDone"
                 android:text="Feita"
@@ -115,4 +137,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </LinearLayout>
+
 </ScrollView>
+

@@ -4,7 +4,7 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/color_default</item>
-        <item name="colorSecondary">@color/color_default</item> -->
+        <item name="colorSecondary">@color/color_default</item>
         <item name="android:windowBackground">@color/color_default</item>
     </style>
 
@@ -12,7 +12,7 @@
 
     <style name="CustonTabLayout" parent="Theme.Material3.DayNight.NoActionBar">
             <item name="android:textSize">14sp</item>
-            <iten name="android:textStyle">bold</iten>
+            <item name="android:textStyle">bold</item>
     </style>
 
     <style name="MyRadioButton" parent="Theme.AppCompat.Light">
