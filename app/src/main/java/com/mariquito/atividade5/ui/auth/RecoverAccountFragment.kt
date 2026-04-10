@@ -5,13 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.mariquito.atividade5.R
+import com.mariquito.atividade5.databinding.FragmentRecoverAccountBinding
 import com.mariquito.atividade5.databinding.FragmentSplashBinding
+import com.mariquito.atividade5.util.initToolbar
+
 
 
 class RecoverAccountFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentRecoverAccountBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,8 +23,31 @@ class RecoverAccountFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSplashBinding.inflate(inflater , container , false)
+        _binding = FragmentRecoverAccountBinding.inflate(inflater , container , false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initToolbar(binding.toolbar14)
+        initListener()
+    }
+
+    private fun initListener(){
+        binding.btnRecover.setOnClickListener{
+            validateData()
+        }
+    }
+
+    private fun validateData(){
+        val email = binding.recuperarsenha.text.toString().trim()
+
+        if (email.isNotBlank()){
+            Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            Toast.makeText(requireContext(), "Preencha seu e-mail!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
