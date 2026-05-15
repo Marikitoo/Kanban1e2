@@ -11,6 +11,7 @@ import com.mariquito.atividade5.R
 import com.mariquito.atividade5.databinding.FragmentRegisterBinding
 import com.mariquito.atividade5.databinding.FragmentSplashBinding
 import com.mariquito.atividade5.util.initToolbar
+import com.mariquito.atividade5.util.showBottomSheet
 
 class RegisterFragment : Fragment() {
 
@@ -47,10 +48,10 @@ class RegisterFragment : Fragment() {
             if (senha.isNotBlank()){
                 Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(requireContext(), "Preencha sua senha!", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = getString(R.string.password_empty_register))
             }
         }else{
-            Toast.makeText(requireContext(), "Preencha seu e-mail!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = getString(R.string.email_empty_register))
         }
 
     }

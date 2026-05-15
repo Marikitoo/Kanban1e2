@@ -10,6 +10,7 @@ import com.mariquito.atividade5.R
 import com.mariquito.atividade5.databinding.FragmentFormTaskBinding
 import com.mariquito.atividade5.databinding.FragmentRecoverAccountBinding
 import com.mariquito.atividade5.util.initToolbar
+import com.mariquito.atividade5.util.showBottomSheet
 
 
 class FormTaskFragment : Fragment() {
@@ -45,7 +46,7 @@ class FormTaskFragment : Fragment() {
             Toast.makeText(requireContext(), "Tudo OK!", Toast.LENGTH_SHORT).show()
         }
         else{
-            Toast.makeText(requireContext(), "Preencha seu e-mail!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = getString(R.string.email_empty))
         }
     }
 

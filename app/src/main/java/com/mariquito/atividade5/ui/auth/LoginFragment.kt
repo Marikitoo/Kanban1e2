@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.mariquito.atividade5.R
 import com.mariquito.atividade5.databinding.FragmentLoginBinding
-
-
+import com.mariquito.atividade5.util.showBottomSheet
 
 
 class LoginFragment : Fragment() {
@@ -54,10 +53,10 @@ class LoginFragment : Fragment() {
             if (senha.isNotBlank()){
                 findNavController().navigate(R.id.action_global_homeFragment)
             }else{
-                Toast.makeText(requireContext(), "Preencha sua senha!", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = getString(R.string.password_empty))
             }
         }else{
-            Toast.makeText(requireContext(), "Preencha seu e-mail!", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = getString(R.string.email_empty))
         }
 
     }
